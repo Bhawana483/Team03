@@ -1,0 +1,26 @@
+[
+ {
+   "name": "shirt",
+   "cloth_type": "cotton",
+   "color": "white",
+   "brand": "highlander",
+   "cost": "1199",
+   "image": "/home/bhawana/Downloads/s1.jpeg",
+   "section": "male",
+   "size": "L",
+   "quality": "high",
+   "good_fit": "slim fit",
+   "attractiveness": "fine",
+   "pattern": "solid",
+   "length": "full length",
+   "neck": "",
+   "occasion": "casual wear",
+   "sleeve": "full sleeve",
+   "origin": "made in india",
+   "description": "White solid casual shirt, has a spread collar, long sleeves, curved hem, two flap pockets",
+   "ease_of_care": "washable",
+   "discount": "0",
+   "category_id": "1",
+   "manager_id": "3"
+ }  
+]
