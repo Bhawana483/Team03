@@ -1,0 +1,941 @@
+.section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+body {
+	font-family: 'Cabin', sans-serif;
+	background-color: #f0f5f5;
+}
+
+.box-layout, .form {
+	position: relative;
+	width: 100%;
+	margin: auto;
+	background: rgb(255, 255, 255);
+	-webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.signup-form{
+	max-width: 600px;
+}
+
+.login-form{
+	max-width: 400px;
+	margin-top: 5%;
+}
+
+.form>.booking-bg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 250px;
+	background-image: url('../img/background.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.form>form {
+	padding: 30px;
+	border: 1px solid #f9fafc;
+	border-left: 0px;
+}
+
+.form .form-header {
+	margin-bottom: 30px;
+}
+
+.form .form-header h2 {
+	margin: 0;
+	margin-bottom: 0px;
+	font-weight: 700;
+	color: #122244;
+	font-size: 35px;
+	text-transform: capitalize;
+}
+
+.form .form-group {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.form .form-control {
+	background-color: #f7f9fa;
+	height: 40px;
+	padding: 0px 10px;
+	border-radius: 0px;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	color: #122244;
+	border: 0px;
+	font-size: 16px;
+	font-weight: 700;
+	-webkit-box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+	box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+}
+
+.form .form-control::-webkit-input-placeholder {
+	color: #dde3e8;
+}
+
+.form .form-control:-ms-input-placeholder {
+	color: #dde3e8;
+}
+
+.form .form-control::placeholder {
+	color: #dde3e8;
+}
+
+.form .form-control:focus {
+	-webkit-box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+	box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+}
+
+.form input[type="date"].form-control:invalid {
+	color: #dde3e8;
+}
+
+.form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 4px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+}
+
+.form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	color: #dddee9;
+	font-size: 14px;
+}
+
+.form .form-label {
+	color: #b5c1cc;
+	font-weight: 700;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	text-transform: uppercase;
+	line-height: 24px;
+	height: 24px;
+	font-size: 14px;
+	z-index: 1;
+}
+
+.form .form-btn {
+	margin-top: 10px;
+}
+
+.form .submit-btn {
+	color: #fff;
+	background-color: #6499ff;
+	font-weight: 700;
+	padding: 13px 35px;
+	font-size: 16px;
+	border: none;
+	width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+	.form>.booking-bg {
+		display: none;
+	}
+	.form>form {
+		margin-left: 0px;
+	}
+}
+.navbar-default{
+	background-color: #9fc0db;
+	border-radius: 0;
+	min-height:100px;
+}
+.p-20x{
+	padding: 20px;
+}
+.form-check-label{
+	position: relative;
+	top: -2px;
+	font-weight: normal;
+}
+.form-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.form-group ul li:before {
+    content: "ERROR";
+    background: #B0413E;
+    font-size: 10px;
+    padding: 2px 5px;
+    color: #fff;
+    margin-right: 10px
+}
+.edit-link{
+	color: #000000;
+	font-size: 16px;
+	border: 1px solid #eeeeee;
+	width: 30px;
+	display: inline-block;
+	text-align: center;
+}
+
+.delete-link{
+	color: #B0413E;
+	font-size: 16px;
+	border: 1px solid #eeeeee;
+	width: 30px;
+	display: inline-block;
+	text-align: center;
+}
+
+
+
+.tech-slideshow {
+	height: 200px;
+	max-width: 800px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+  }
+  
+  .tech-slideshow > div {
+	height: 200px;
+	width: 2526px;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	transform: translate3d(0, 0, 0);
+  }
+  .tech-slideshow .mover-1 {
+	animation: moveSlideshow 12s linear infinite;
+  }
+  .tech-slideshow .mover-2 {
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+	background-position: 0 -200px;
+	animation: moveSlideshow 15s linear infinite;
+  }
+  .tech-slideshow:hover .mover-2 {
+	opacity: 1;
+  }
+  
+  @keyframes moveSlideshow {
+	100% { 
+	  transform: translateX(-66.6666%);  
+	}
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  body {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	position: relative;
+}
+
+#container .page-heading{
+margin:0 auto;
+width:30vw;
+font-size:4vw;
+font-weight:bold;
+text-align:center;
+}
+
+/*This is the main slider window that will be visible and in the middle.
+  Only the content for it's 0 top left to max right bottom will be showing.
+  Any over flowing content will be hidden.*/
+.slider {
+	border: 1px solid black;
+	width: 50vw;
+	height: 50vh;
+	margin: 0 auto;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: center;
+}
+
+	/*This is the main inner box that will have full width of the content that we need to slide through.
+  As we will be using image width of 50vw for this slider and we are using 5 images so the width of this container will be 50 * 5 = 250vw.
+  Height will remain same as it's parent.
+  Only 1/5th of the content of this container will be visible through it's parent .slider */
+	.slider #slider-inner {
+		/*For Horizontal*/
+		width: 250vw;
+		height: 50vh;
+		position: relative;
+		display: block;
+		margin-left:-2px; /*margin adjustment due to inline slide boxes for horizontal slider*/
+	}
+
+		/*This is the box that will be containing 1 image at a time.
+  5 slide boxes will be added within a #slider-inner box side by side for horizontal and stacked up and down for vertical sliding.
+  This will have the same width and height that of the image.
+*/
+		.slider #slider-inner .slide-box {
+			/*For Horizontal*/
+			display: inline-block;
+			position: relative;
+			width: 50vw;
+			height: 50vh;
+			overflow: hidden;
+			margin-right: -4px;
+		}
+
+			/*The following 2 classes i.e. .slide-box.first and .slide-box.other are the classes that will apply 2 different animations to the sliding boxes.
+	The first slide box of the slider will have a different animation where as all other slide boxes will have another same animation applied.
+	The reason for 2 different animations is that in order to make this slider continous,
+	we will have the first slide box to move to the left on its turn and then, when the rest of the boxes are in view within the slider window,
+	we will move this first box to the right joined with the end of the last box.
+	As the last box moves out this first image will come in from the right in view.
+	Now as the first box is showing again,
+	we will have all the other slide boxes moved back to the right of this first slide box so that
+	when this first slide box moves again to left, the next slide box comes into view from the right side.
+	And all this animation repeats itself infinitely to give the view of a continously moving line of images repeating the images every 5 slide boxes.
+*/
+			.slider #slider-inner .slide-box.first {
+				/*Adjust animation duration (30s value) to set slide speed (for slower, increase it for faster decrease it. Duration of animation should match with the .slide-box */
+				animation: sliderAnimFirstLast 30s ease-in-out infinite;
+				-webkit-animation: sliderAnimFirstLast 30s ease-in-out infinite;
+				-moz-animation: sliderAnimFirstLast 30s ease-in-out infinite;
+				-o-animation: sliderAnimFirstLast 30s ease-in-out infinite;
+			}
+
+			.slider #slider-inner .slide-box.other {
+				/*Adjust animation duration (30s value) to set slide speed (for slower, increase it for faster decrease it. Duration of animation should match with the .slide-box-first-last */
+				animation: sliderAnim 30s ease-in-out infinite;
+				-webkit-animation: sliderAnim 30s ease-in-out infinite;
+				-moz-animation: sliderAnim 30s ease-in-out infinite;
+				-o-animation: sliderAnim 30s ease-in-out infinite;
+			}
+
+
+			/*The next 4 classes i.e. div.text-overlay and the h1,h2 and h3 are applied to the text overlay in case you want to show some text heading or tag line over each/selected images in the slider.*/
+
+			.slider #slider-inner .slide-box div.text-overlay {
+				display: block;
+				overflow: hidden;
+				z-index: 1;
+				background-color: transparent;
+				font-weight: bold;
+				color: white;
+				position: absolute;
+				/*Adjust top/right/bottom/left for text place adjustment*/
+				top: 5%;
+				left: 40%;
+			}
+
+	/*h1 - h3 responsive font size and margin adjustment for the text overlay within each slidebox*/
+	
+	.slider h1, .slider h2, .slider h3 {
+		text-shadow: 5px 5px 5px black;
+		margin: 0.5vw;
+	}
+	
+	.slider h1 {font-size: 4vw;}
+	.slider h2 {font-size: 3vw;}
+	.slider h3 {font-size: 2vw;}
+
+
+	/*  This class applies to the image within each slide-box.
+	Each image's width is set to take 100% width of the box to keep them joined.
+	However in order to preserve the image's aspect ratio with height.
+	We have adjusted the top margins and translated it to show us the middle of a image height wise
+	if it's aspect ratio makes it bigger than the height of the slide-box*/
+	.slider #slider-inner .slide-box img {
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	/*The next 2 classes i.e. .pause-overlay and it's hover state class are the pause symbol
+	that shows itself near the top right of the slider when we hover over the slider to pause the animations*/
+	.slider .pause-overlay {
+		width: 5px;
+		height: 15px;
+		border-right: 5px solid white;
+		border-left: 5px solid white;
+		z-index: 11;
+		position: absolute;
+		left: 2.5%;
+		top: 5%;
+		opacity: 0;
+	}
+
+	.slider:hover .pause-overlay {
+		opacity: 0.75 !important;
+	}
+
+	/*This class pauses the animation of all slide boxes when hovered over the main slider*/
+	.slider:hover > #slider-inner > .slide-box {
+		animation-play-state: paused;
+		-webkit-animation-play-state: paused;
+		-moz-animation-play-state: paused;
+		-o-animation-play-state: paused;
+	}
+
+/*Slider keyframe percentages are based on the number of images within the slide.
+	This current setting is for 5 images within the slider.
+	If you want to increase it then the percentage will have to be adjust for both the slideAnim and the slideAnimFirstLast respectively*/
+
+@keyframes sliderAnim {
+	/*Initial empty slide-box position that coincides with the second animation of the first slide-box to show the first slide here. Set z-index to -1 so that this keeps in background so that second animation slide is at front*/
+	0% {
+		right: 0;
+		top:0vh;
+		z-index: -1;
+	}
+	/*pause for first slide-box in second animation from 0%- 10%. Keep these boxes in background with z-index= -1 */
+	10% {
+		right: 0;
+		z-index: -1;
+	}
+	/*Keep these boxes in background with z-index= -1. move of first slide box in second animation and parallel move of this animation's other slide boxes to the left 0 + 50vw = 50vw from 10% - 20% */
+	20% {
+		right: 50vw;
+		z-index: -1;
+	}
+	/*bring to front by setting z-index=1. pause slide-box from 20%- 30%*/
+	30% {
+		right: 50vw;
+		z-index: 1;
+	}
+	/*move the slide boxes to the left previous + 50vw = 100vw from 30% - 40% */
+	40% {
+		right: 100vw;
+		z-index: 1;
+	}
+	/*pause slide-box from 40%- 50%*/
+	50% {
+		right: 100vw;
+		z-index: 1;
+	}
+	/*move the slide boxes to the left previous + 50vw = 150vw from 50% - 60% */
+	60% {
+		right: 150vw;
+		z-index: 1;
+	}
+	/*pause slide-box from 60%- 70%*/
+	70% {
+		right: 150vw;
+		z-index: 1;
+	}
+	/*move the slide boxes to the left previous + 50vw = 200vw from 70% - 80% */
+	80% {
+		right: 200vw;
+		z-index: 1;
+	}
+	/*pause slide-box from 89%- 98%*/
+	89% {
+		right: 200vw;
+		z-index: 1;
+	}
+	/*move the slide boxes to the left previous + 50vw = 250vw from 89% - 98%. This is another empty slide box move to the first slide that is moved at this spot in the second animation. Keep it in background with z-index=-1*/
+	98% {
+		right: 250vw;
+		top:0vh;
+		z-index: -1;
+	}
+	/*move it to the top out of the view box for resetting it back to the start*/
+	99% {
+		right: 250vw;
+		top:-50vh;
+		z-index: -1;
+	}
+	/*Imediately move slide box back to 0 keeping it out of view where the second animation is still showing the first slide and then so on from start again. 99%- 100% => 0%. Keep this move hidden with z-index=-1*/
+	100% {
+		right: 0;
+		top:-50vh;
+		z-index: -1;
+	}
+}
+
+@-webkit-keyframes sliderAnim { /*For cross browser support*/
+	0% {
+		right: 0;
+		top:0vh;
+		z-index: -1;
+	}
+	10% {
+		right: 0;
+		z-index: -1;
+	}
+	20% {
+		right: 50vw;
+		z-index: -1;
+	}
+	30% {
+		right: 50vw;
+		z-index: 1;
+	}
+	40% {
+		right: 100vw;
+		z-index: 1;
+	}
+	50% {
+		right: 100vw;
+		z-index: 1;
+	}
+	60% {
+		right: 150vw;
+		z-index: 1;
+	}
+	70% {
+		right: 150vw;
+		z-index: 1;
+	}
+	80% {
+		right: 200vw;
+		z-index: 1;
+	}
+	89% {
+		right: 200vw;
+		z-index: 1;
+	}
+	98% {
+		right: 250vw;
+		top:0vh;
+		z-index: -1;
+	}
+	99% {
+		right: 250vw;
+		top:-50vh;
+		z-index: -1;
+	}
+	100% {
+		right: 0;
+		top:-50vh;
+		z-index: -1;
+	}
+}
+
+@keyframes sliderAnimFirstLast {
+	/*Initial position of the first slide box coinciding with the first animation of all other slide boxes. At front in view using z-index=1*/
+	0% {
+		right: 0;
+		z-index: 1;
+	}
+	/*Pause for first slide box from 0% - 10%. Keep it at front showing with z-index=1 */
+	10% {
+		right: 0vw;
+		z-index: 1;
+	}
+	/*move of first slide box to the left 0 + 50vw = 50vw from 10% - 20% while in parallel the first animation slides it's boxes left 50vw as well. Go in background with z-index=-1*/
+	20% {
+		right: 50vw;
+		top:0vh;
+		z-index: 1;
+	}
+	/*Keep it hidden(z-index=-1). Move it to top -50vw to be out of view (21%), 
+		then right to the end of slider window (22%) 
+		and then back down with top 0vw to be inline with view box and ready to come back into view from the right after the last slide.*/
+	21%{
+		top: -50vh;
+		right:50vw;
+		z-index: -1;
+	}
+	22% {
+		top: -50vh;
+		right:-50vw;
+		z-index: -1;
+	}
+	23% {
+		top: 0vh;
+		right:-50vw;
+		z-index: -1;
+	}
+	/*Make it come in front (z-index=1) and ready till 89% at the end of the last slide box position. */
+	89% {
+		right: -50vw;
+		z-index: 1;
+	}
+	/*As the first animation box moves into an empty box space,
+		move this first slide to the left -50vw from 89% - 98% into view to show continous circular move from last back to first.*/
+	98% {
+		right: 0vw;
+		z-index: 1;
+	}
+	/*Keep the first slide at 0 position and in front as the first animation moves the other slide boxes to the right of this first slide box so that the continuity is kept.*/
+	100% {
+		right: 0;
+		z-index: 1;
+	}
+	
+}
+
+@-webkit-keyframes sliderAnimFirstLast { /*For cross browser support*/
+	0% {
+		right: 0;
+		z-index: 1;
+	}
+	10% {
+		right: 0vw;
+		z-index: 1;
+	}
+	20% {
+		right: 50vw;
+		top:0vh;
+		z-index: 1;
+	}
+	21%{
+		top: -50vh;
+		right:50vw;
+		z-index: -1;
+	}
+	22% {
+		top: -50vh;
+		right:-50vw;
+		z-index: -1;
+	}
+	23% {
+		top: 0vh;
+		right:-50vw;
+		z-index: -1;
+	}
+	89% {
+		right: -50vw;
+		z-index: 1;
+	}
+	98% {
+		right: 0vw;
+		z-index: 1;
+	}
+	100% {
+		right: 0;
+		z-index: 1;
+	}
+	
+}
+
+
+
+/* Classes For Vertical Slide*/
+
+.slider #slider-inner.vertical { /*For verticle the width is set to the width of the image i.e. 50vw and the height is the number of images * width of single image i.e. 5 * 50vw = 250vw.*/
+	/*For verticle*/
+	width: 50vw !important;
+	height: 250vw !important;
+	margin-left:0 !important; /*-2px adjustment of inline slide box not needed in vertical slider*/          
+}
+
+	.slider #slider-inner.vertical .slide-box {
+		/*For verticle*/
+		display: block; /*Make display block from inline-block so that the images stack themselves top to bottom instead of side ways.*/
+		position: relative;
+		width: 50vw;
+		height: 50vh;
+		overflow: hidden;
+		margin-right: -4px;
+	}
+
+		.slider #slider-inner.vertical .slide-box.first {
+			/*Adjust animation duration (30s value) to set slide speed (for slower, increase it for faster decrease it. Duration of animation should match with the .slide-box */
+			animation: sliderAnimFirstLastVertical 30s ease-in-out infinite;
+			-webkit-animation: sliderAnimFirstLastVertical 30s ease-in-out infinite;
+			-moz-animation: sliderAnimFirstLastVertical 30s ease-in-out infinite;
+			-o-animation: sliderAnimFirstLastVertical 30s ease-in-out infinite;
+		}
+
+		.slider #slider-inner.vertical .slide-box.other {
+			/*Adjust animation duration (30s value) to set slide speed (for slower, increase it for faster decrease it. Duration of animation should match with the .slide-box-first-last */
+			animation: sliderAnimVertical 30s ease-in-out infinite;
+			-webkit-animation: sliderAnimVertical 30s ease-in-out infinite;
+			-moz-animation: sliderAnimVertical 30s ease-in-out infinite;
+			-o-animation: sliderAnimVertical 30s ease-in-out infinite;
+		}
+
+.slider:hover > #slider-inner.vertical > .slide-box {
+	/*For verticle*/
+	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-o-animation-play-state: paused;
+}
+
+@media only screen and (max-width: 1024px) { /* adjust text top alignment based on image position at certain screen sizes.*/
+	.slider #slider-inner .slide-box div.text-overlay {
+		top: 15%;
+	}
+}
+
+@keyframes sliderAnimVertical { /*Same as slideAnim just we will be setting the top position instead of the right*/
+	0% {
+		top: 0;
+		left:0vw;
+		z-index: -1;
+	}
+
+	10% {
+		top: 0vh;
+		z-index: -1;
+	}
+
+	20% {
+		top: -50vh;
+		z-index: -1;
+	}
+
+	30% {
+		top: -50vh;
+		z-index: 1;
+	}
+
+	40% {
+		top: -100vh;
+		z-index: 1;
+	}
+
+	50% {
+		top: -100vh;
+		z-index: 1;
+	}
+
+	60% {
+		top: -150vh;
+		z-index: 1;
+	}
+
+	70% {
+		top: -150vh;
+		z-index: 1;
+	}
+
+	80% {
+		top: -200vh;
+		z-index: 1;
+	}
+
+	89% {
+		top: -200vh;
+		z-index: 1;
+	}
+
+	98% {
+		top: -250vh;
+		left:0vw;
+		z-index: -1;
+	}
+	99% {
+		top: -250vh;
+		left:-50vw;
+		z-index: -1;
+	}
+	100% {
+		top: 0vh;
+		left:-50vw;
+		z-index: -1;
+	}
+}
+
+@-webkit-keyframes sliderAnimVertical { /* For cross browser support*/
+	0% {
+		top: 0;
+		left:0vw;
+		z-index: -1;
+	}
+
+	10% {
+		top: 0vh;
+		z-index: -1;
+	}
+
+	20% {
+		top: -50vh;
+		z-index: -1;
+	}
+
+	30% {
+		top: -50vh;
+		z-index: 1;
+	}
+
+	40% {
+		top: -100vh;
+		z-index: 1;
+	}
+
+	50% {
+		top: -100vh;
+		z-index: 1;
+	}
+
+	60% {
+		top: -150vh;
+		z-index: 1;
+	}
+
+	70% {
+		top: -150vh;
+		z-index: 1;
+	}
+
+	80% {
+		top: -200vh;
+		z-index: 1;
+	}
+
+	89% {
+		top: -200vh;
+		z-index: 1;
+	}
+
+	98% {
+		top: -250vh;
+		left:0vw;
+		z-index: -1;
+	}
+	99% {
+		top: -250vh;
+		left:-50vw;
+		z-index: -1;
+	}
+	100% {
+		top: 0vh;
+		left:-50vw;
+		z-index: -1;
+	}
+}
+
+@keyframes sliderAnimFirstLastVertical { /*Same as slideAnimFirstLast just we will be setting the top position instead of the right*/
+	0% {
+		top: 0;
+		z-index: 1;
+	}
+
+	10% {
+		top: 0vh;
+		z-index: 1;
+	}
+
+	20% {
+		top: -50vh;
+		left:0vw;
+		z-index: 1;
+	}
+	21%{
+		top: -50vh;
+		left:-50vw;
+		z-index: -1;
+	}
+	22% {
+		top: 50vh;
+		left:-50vw;
+		z-index: -1;
+	}
+	23% {
+		top: 50vh;
+		left:0vw;
+		z-index: -1;
+	}
+	89% {
+		top: 50vh;
+		z-index: 1;
+	}
+
+	98% {
+		top: 0vh;
+		z-index: 1;
+	}
+
+	100% {
+		top: 0;
+		z-index: 1;
+	}
+}
+
+@-webkit-keyframes sliderAnimFirstLastVertical { /* For cross browser support */
+	0% {
+		top: 0;
+		z-index: 1;
+	}
+
+	10% {
+		top: 0vh;
+		z-index: 1;
+	}
+
+	20% {
+		top: -50vh;
+		left:0vw;
+		z-index: 1;
+	}
+	21%{
+		top: -50vh;
+		left:-50vw;
+		z-index: -1;
+	}
+	22% {
+		top: 50vh;
+		left:-50vw;
+		z-index: -1;
+	}
+	23% {
+		top: 50vh;
+		left:0vw;
+		z-index: -1;
+	}
+	89% {
+		top: 50vh;
+		z-index: 1;
+	}
+
+	98% {
+		top: 0vh;
+		z-index: 1;
+	}
+
+	100% {
+		top: 0;
+		z-index: 1;
+	}
+}
+
+  

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home{% endblock %}
+{% block front_nav_right_section %}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="row">
+            
+                <div class="col-md-6">
+                    <div class="jumbotron">
+                        <div class="col-sm-8">
+                            <div class="card-body d-flex flex-column align-items-start">
+                                {# <strong class="d-inline-block mb-2 text-primary">World</strong> #}
+                                <h3 class="mb-0">
+                                                                    </h3>
+                                {# <div class="mb-1 text-muted">{{products.getCreatedAt()|date(date_format)}}</div> #}
+                                <p class="card-text mb-auto"><b>Product Name: </b> {{products.getName()|striptags|slice(0, 50)}}</p>
+                                <p class="card-text mb-auto"><b>Product Color: </b>{{products.getColor()|striptags|slice(0, 50)}}</p>
+                                <p class="card-text mb-auto"><b>Product Brand: </b>{{products.getBrand()|striptags|slice(0, 50)}}</p>
+                                <p class="card-text mb-auto"><b>Product Price: </b>{{products.getCost()|striptags|slice(0, 50)}}</p>
+                                {# <p class="card-text mb-auto">{{products.getImage()|striptags|slice(0, 50)}}</p> #}
+                                <p class="card-text mb-auto"><b>For Occasion: </b>{{products.getOccasion()|striptags|slice(0, 50)}}</p>
+                                {# <p class="card-text mb-auto">{{products.getManager()|striptags|slice(0, 50)}}</p> #}
+                                <p class="card-text mb-auto"><b>For: </b>{{products.getSection()|striptags|slice(0, 50)}}</p>
+                                <p class="card-text mb-auto"><b>Size: </b>{{products.getSize()|striptags|slice(0, 50)}}</p>
+                                <p class="card-text mb-auto"><b>Length: </b>{{products.getLength()|striptags|slice(0, 50)}}</p>
+                                <p class="card-text mb-auto"><b>Fitting: </b>{{products.getGoodFit()|striptags|slice(0, 50)}}</p>
+                               
+                                
+                            </div>
+                        </div>
+                        {# <div class="col-sm-4"><img src="{{('uploads/product/' ~ product.getImage()) }}" width="170px" height="60px" alt="logo"></div> #}
+                        <div class="col-sm-4"><img data-src="holder.js/300x200/random" width="170px" height="150px" alt="Thumbnail [200x250]" style="max-width: 100%;" src="{{asset('uploads/images/' ~ products.getImage()) }}" data-holder-rendered="true"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+           
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}{% endblock %}
