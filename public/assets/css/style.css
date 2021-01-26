@@ -14,7 +14,8 @@
 
 body {
 	font-family: 'Cabin', sans-serif;
-	background-color: #f0f5f5;
+	background-color: #ffffff;
+	background: url('g.jpg');
 }
 
 .box-layout, .form {
@@ -27,12 +28,19 @@ body {
 }
 
 .signup-form{
-	max-width: 600px;
+	width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 50px;
 }
 
 .login-form{
-	max-width: 400px;
-	margin-top: 5%;
+	position: relative;
+    box-sizing: border-box;
+    height: auto;
+   
+    font-size: 16px;
 }
 
 .form>.booking-bg {
@@ -167,7 +175,7 @@ body {
 	}
 }
 .navbar-default{
-	background-color: #9fc0db;
+	background-color: #094f88;
 	border-radius: 0;
 	min-height:100px;
 }

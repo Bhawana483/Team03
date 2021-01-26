@@ -79,10 +79,7 @@ class User implements UserInterface
      */
     private $gender;
 
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $dob;
+    
 
 
     public function __construct()
@@ -316,17 +313,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getDob(): ?\DateTimeInterface
-    {
-        return $this->dob;
-    }
-
-    public function setDob(?\DateTimeInterface $dob): self
-    {
-        $this->dob = $dob;
-
-        return $this;
-    }
+    
 
     public function getGender(): ?string
     {

@@ -28,9 +28,9 @@
 
 <body>
 <div class="section">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" color: #fffbfb>
         <div class="container-fluid">
-            <div class="navbar-header">
+            <div class="navbar-header"color: #fffbfb;>
                 {# <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar">nhghgh</span>
@@ -38,19 +38,19 @@
                     <span class="icon-bar"></span>
                 </button> #}
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <a class="navbar-brand" href="{{ path('home') }}" style="font-size: 40px;">{{project_name}}</a>
+                    <a class="navbar-brand" href="{{ path('home') }}" style="font-size: 40px; color: #fffafa;">{{project_name}}</a>
                 </div>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="font-size: 20px; color:black;">
-                <ul class="nav navbar-nav navbar-right">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="font-size: 28px; color: #fffbfb;">
+                <ul class="nav navbar-nav navbar-right" color: #fffbfb;>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href="{{ path('app_logout') }}">LOGOUT</a></li>
                     {% else %}
-                        <li><a href="{{ path('app_register') }}">SIGNUP</a></li>
+                        <li> <a href="{{ path('app_register') }}">SIGNUP</a></li>
                         <li><a href="{{ path('app_login') }}">LOGIN</a></li>
                     {% endif %}
                 </ul>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" color: #fffafa;>
                     {% if is_granted('ROLE_ADMIN') %}
                             <li><a href="{{ path('admin') }}">Admin Panal</a></li>
                            
@@ -64,7 +64,7 @@
                             </marquee>
                             <li><a href="{{ path('admin') }}">Manager Panal</a></li>
                         {% else %}
-                        <li> <marquee >Welcome To Our Page!!!</marquee></li>
+                        <li><marquee>Welcome To Our Page!!!</marquee></li>
                     {% endif %}
                 </ul>
                 

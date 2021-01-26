@@ -1,82 +1,84 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}   
+{% block title %}{{project_name}} | Signup{% endblock %}
 
 {% block body %}
-{{ form_start(registrationForm) }}
-<div class="container"><br>
-		<h1 class="text-success text-center"> Registration Form</h1><br>
-		<div class="col-lg-8 m-auto d-block">
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+    <div class="row">
+        <div class="form signup-form">
+            {{ form_start(registrationForm) }}
+                <div class="form-header">
+                    <h2 class="text-center">Signup</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for flashError in app.flashes('verify_email_error') %}
+                            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{form_label(registrationForm.first_name)}}
+                            {{form_errors(registrationForm.first_name)}}
+                            {{form_widget(registrationForm.first_name, {attr: {class: 'form-control', placeholder:'Enter your first name'}})}}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{form_label(registrationForm.last_name)}}
+                            {{form_errors(registrationForm.last_name)}}
+                            {{form_widget(registrationForm.last_name, {attr: {class: 'form-control', placeholder:'Enter your last name'}})}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{form_label(registrationForm.email)}}
+                            {{form_errors(registrationForm.email)}}
+                            {{form_widget(registrationForm.email, {attr: {class: 'form-control', placeholder:'Enter your email'}})}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                           <div class="col-md-6">
+                                <div class="form-group">
+                                    {{form_label(registrationForm.plainPassword.first)}}
+                                    {{form_errors(registrationForm.plainPassword.first)}}
+                                    {{form_widget(registrationForm.plainPassword.first, {attr: {class: 'form-control', placeholder:'Enter your password'}})}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"> 
+                                    {{form_label(registrationForm.plainPassword.second)}}
+                                    {{form_errors(registrationForm.plainPassword.second)}}
+                                    {{form_widget(registrationForm.plainPassword.second, {attr: {class: 'form-control', placeholder:'Re-enter your password'}})}}
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{form_label(registrationForm.contact, 'contact')}}
+                            {{form_errors(registrationForm.contact)}}
+                            {{form_widget(registrationForm.contact, {attr: {class: 'form-control', placeholder:'Enter your phone number'}})}}
+                        </div>
+                    </div>									
+                   
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{form_label(registrationForm.gender)}}
+                            {{form_errors(registrationForm.gender)}}
+                            {{form_widget(registrationForm.gender, {attr: {class: 'form-control'}})}}
+                            <span class="select-arrow"></span>
+                        </div>
+                    </div>
 
-    {# <h1>Register</h1> #}
-    <div class="form-group">
-		<label> First Name: </label>
-        {{form_errors(registrationForm.first_name)}}
-        {{form_widget(registrationForm.first_name, {attr: {class: 'form-control', placeholder:'Enter your first name'}})}}
-		<span class="text-danger font-weight-bold"></span>
-	</div>
-
-    <div class="form-group">
-		<label> Last Name: </label>
-        {{form_errors(registrationForm.last_name) }}
-        {{form_widget(registrationForm.last_name, {attr: {class: 'form-control', placeholder:'Enter your last name'}})}}
-		<span class="text-danger font-weight-bold"></span>
-	</div>
-
-     <div class="form-group">
-		<label> Contact Number: </label>
-        {{form_errors(registrationForm.contact) }}
-        {{form_widget(registrationForm.contact, {attr: {class: 'form-control', placeholder:'Enter your mobile number'}})}}
-		<span class="text-danger font-weight-bold"></span>
-	</div>
-
-    <div class="form-group">
-		<label> Email: </label>
-        {{form_errors(registrationForm.email) }}
-        {{form_widget(registrationForm.email, {attr: {class: 'form-control', placeholder:'Enter your Email'}})}}
-		<span class="text-danger font-weight-bold"></span>
-	</div>
-
-   
-
-    <div class="form-group">
-		<label> Gender: </label>
-        {{form_errors(registrationForm.gender) }}
-        {{form_widget(registrationForm.gender, {attr: {class: 'form-control'}})}}
-		<span class="text-danger font-weight-bold"></span>
-	</div>
-
-    <div class="form-group">
-		<label> Date of Birth: </label>
-        {{form_errors(registrationForm.dob) }}
-        {{form_widget(registrationForm.dob)}}
-		<span class="text-danger font-weight-bold"></span>
-	</div>
-
-        <div class="form-group">
-            {{form_label(registrationForm.plainPassword.first)}}
-            {{form_errors(registrationForm.plainPassword.first)}}
-            {{form_widget(registrationForm.plainPassword.first, {attr: {class: 'form-control', placeholder:'Enter your password'}})}}
+                          
+                    <div class="col-md-12">
+                        <div class="form-btn">
+                            <button class="submit-btn">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            {{ form_end(registrationForm) }}
         </div>
-   
-    
-    <div class="form-group"> 
-            {{form_label(registrationForm.plainPassword.second)}}
-            {{form_errors(registrationForm.plainPassword.second)}}
-            {{form_widget(registrationForm.plainPassword.second, {attr: {class: 'form-control', placeholder:'Re-enter your password'}})}}
-        
-    </div>
-    <button type="submit" class="btn btn-success">Register</button>
-    {{ form_end(registrationForm) }}
-    {# {{ form_start(registrationForm) }}
-        {# {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }} #}
-        {# <button type="submit" class="btn btn-success">Register</button>
-    {{ form_end(registrationForm) }} #}
-     </div>
     </div>
 {% endblock %}

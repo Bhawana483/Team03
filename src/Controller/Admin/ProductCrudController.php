@@ -28,7 +28,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\Validator\Constraints\Choice;
 use App\Controller\Admin\JsonResponsese;
-//use App\Controller\Admin\HttpFoundationResponse;
+
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -74,12 +74,23 @@ class ProductCrudController extends AbstractCrudController
             return $actions
             ->setPermission(Action::DELETE, 'ROLE_ADMIN')
              ->setPermission(Action::EDIT, 'ROLE_ADMIN')
-             ->setPermission(Action::NEW, 'ROLE_ADMIN');
+            //  ->setPermission(Action::Import, 'ROLE_ADMIN')
+             ->setPermission(Action::NEW, 'ROLE_ADMIN')
             ;
         }
        
                      
     }
+    public function configureCrud(Crud $crud): Crud{
+        if ($this->isGranted('ROLE_ADMIN') || $this->isGranted('ROLE_MANAGER')) {
+        
+            return $crud
+               
+                
+                
+            ;
+        }
+        }
 
     public function configureFields(string $pageName): iterable
     {
@@ -195,7 +206,7 @@ class ProductCrudController extends AbstractCrudController
              ]),
              IntegerField::new('discount'),
              AssociationField::new('category'),
-             AssociationField::new('manager'),
+             AssociationField::new('manager')->hideOnForm(),
              ChoiceField::new('status')->setChoices([
                
                  'New' => 'new',
@@ -224,34 +235,117 @@ class ProductCrudController extends AbstractCrudController
                     $cat= $this->ClothCategoryRepository->find($postItem->category_id);
                    // $cat1= $this->UserRepository->find($postItem->manager_id);
                     $newPost->setManager($this -> getUser());
+                    try{
                     $newPost->setName($postItem->name);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the name');
+                    }
+                    try{
                     $newPost->setClothType($postItem->cloth_type);
+                    }catch(\Exception $e){
+                        $this->addFlash('error','Cant find the cloth_type');
+                    }
+                    try{
                     $newPost->setColor($postItem->color);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the color');
+                    }
+                    try{
                     $newPost->setBrand($postItem->brand);
+                    }catch(\Exception $e){
+                        $this->addFlash('error','Cant find the brand');
+                    }
+                    try{
                     $newPost->setCost($postItem->cost);
+                    }catch(\Exception $e){
+                        $this->addFlash('error','Cant find the cost');
+                    }
                     $url = $postItem->image;
                     
                     $fname=basename($postItem->image);
                     $img = 'uploads/images/'.$fname.'';
                     file_put_contents($img, file_get_contents($url));
                     $newPost->setImage($fname);
+                    
+                    
                     $newPost->setCreatedAt(new \DateTime());
                     $newPost->setUpdatedAt(new \DateTime());
+                    try{
                     $newPost->setSection($postItem->section);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the Section');
+                    }
+                    
+                    try{
                     $newPost->setSize($postItem->size);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the size');
+                    }
+                    try{
                     $newPost->setQuality($postItem->quality);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','quality');
+                    }
+                    try{
                     $newPost->setGoodFit($postItem->good_fit);
+                    }catch(\Exception $e){
+                        $this->addFlash('error','Cant find the good_fit');
+                    }
+                    try{
                     $newPost->setAttractiveness($postItem->attractiveness);
+                    }catch(\Exception $e){
+                        $this->addFlash('error','Cant find the attractiveness');
+                    }
+                    try {
                    
                     $newPost->setPattern($postItem->pattern);
+                    }
+                    catch(\Exception $e){
+                        $this->addFlash('error','Cant find the pattern');
+                    }
+                    try{
                     $newPost->setLength($postItem->length);
+                    }
+                    catch(\Exception $e){
+                        $this->addFlash('error','Cant find the length');
+                    }
+                    try{
                     $newPost->setNeck($postItem->neck);
+                    }catch(\Exception $e){
+                        $this->addFlash('error','Cant find the neck');
+                    }
+                    try{
                     $newPost->setOccasion($postItem->occasion);
+                    }catch(\Exception $e){
+                        $this->addFlash('error','Cant find the occasion');
+                    }
+                    try{
+                    
                     $newPost->setSleeve($postItem->sleeve);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the sleeve');
+                    }
+                    try{
                     $newPost->setOrigin($postItem->origin);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the origin');
+                    }
+                    try{
                     $newPost->setDescription($postItem->description);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the description');
+                    }
+                    try {
                     $newPost->setEaseOfCare($postItem->ease_of_care);
+                    } catch(\Exception $e){
+                        $this->addFlash('error','Cant find the ease_of_care');
+                    }
+                    try{
                     $newPost->setDiscount($postItem->discount);
+                    }
+                    catch(\Exception $e){
+                        $this->addFlash('error','Cant find the discount');
+                    }
                     // $newPost->setPostType((!empty($postItem->post_type))?$postItem->post_type:'post');
                     if(!empty($cat)){
                         $newPost->setCategory($cat);
